@@ -1,0 +1,21 @@
+{
+  "name": "enmapdocsbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "docs": "npm run docs:fetch && npm run docs:jsdoc && npm run docs:parse",
+    "docs:fetch": "node ./updateSource.js",
+    "docs:jsdoc": "jsdoc -X ./data/enmap.js > ./data/apidocs.json",
+    "docs:parse": "node ./parseDocs.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "jsdoc": "^3.6.5",
+    "node-fetch": "^2.6.0"
+  }
+}
